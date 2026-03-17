@@ -1,7 +1,7 @@
 module "autoscaling" {
   source                                         = "terraform-aws-modules/autoscaling/aws"
   version                                        = "9.2.0"
-  autoscaling_group_tags                         = var.autoscaling_group_tags
+  autoscaling_group_tags                         = local.autoscaling_group_tags
   autoscaling_group_tags_not_propagate_at_launch = var.autoscaling_group_tags_not_propagate_at_launch
   availability_zone_distribution                 = var.availability_zone_distribution
   availability_zones                             = var.availability_zones
@@ -31,13 +31,13 @@ module "autoscaling" {
   health_check_type                              = var.health_check_type
   hibernation_options                            = var.hibernation_options
   iam_instance_profile_arn                       = var.iam_instance_profile_arn
-  iam_instance_profile_name                      = var.iam_instance_profile_name
+  iam_instance_profile_name                      = local.iam_instance_profile_name
   iam_role_description                           = var.iam_role_description
-  iam_role_name                                  = var.iam_role_name
+  iam_role_name                                  = local.iam_role_name
   iam_role_path                                  = var.iam_role_path
   iam_role_permissions_boundary                  = var.iam_role_permissions_boundary
   iam_role_policies                              = var.iam_role_policies
-  iam_role_tags                                  = var.iam_role_tags
+  iam_role_tags                                  = local.iam_role_tags
   iam_role_use_name_prefix                       = var.iam_role_use_name_prefix
   ignore_desired_capacity_changes                = var.ignore_desired_capacity_changes
   ignore_failed_scaling_activities               = var.ignore_failed_scaling_activities
@@ -46,16 +46,16 @@ module "autoscaling" {
   instance_initiated_shutdown_behavior           = var.instance_initiated_shutdown_behavior
   instance_maintenance_policy                    = var.instance_maintenance_policy
   instance_market_options                        = var.instance_market_options
-  instance_name                                  = var.instance_name
+  instance_name                                  = local.instance_name
   instance_refresh                               = var.instance_refresh
   instance_requirements                          = var.instance_requirements
   instance_type                                  = var.instance_type
   kernel_id                                      = var.kernel_id
-  key_name                                       = var.key_name
+  key_name                                       = local.key_name
   launch_template_description                    = var.launch_template_description
   launch_template_id                             = var.launch_template_id
-  launch_template_name                           = var.launch_template_name
-  launch_template_tags                           = var.launch_template_tags
+  launch_template_name                           = local.launch_template_name
+  launch_template_tags                           = local.launch_template_tags
   launch_template_use_name_prefix                = var.launch_template_use_name_prefix
   launch_template_version                        = var.launch_template_version
   license_specifications                         = var.license_specifications
@@ -67,7 +67,7 @@ module "autoscaling" {
   min_elb_capacity                               = var.min_elb_capacity
   min_size                                       = var.min_size
   mixed_instances_policy                         = var.mixed_instances_policy
-  name                                           = var.name
+  name                                           = local.name
   network_interfaces                             = var.network_interfaces
   network_performance_options                    = var.network_performance_options
   placement                                      = var.placement
@@ -82,7 +82,7 @@ module "autoscaling" {
   service_linked_role_arn                        = var.service_linked_role_arn
   suspended_processes                            = var.suspended_processes
   tag_specifications                             = var.tag_specifications
-  tags                                           = var.tags
+  tags                                           = local.tags
   termination_policies                           = var.termination_policies
   timeouts                                       = var.timeouts
   traffic_source_attachments                     = var.traffic_source_attachments
