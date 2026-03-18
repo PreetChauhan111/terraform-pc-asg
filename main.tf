@@ -95,11 +95,3 @@ module "autoscaling" {
   wait_for_elb_capacity                          = var.wait_for_elb_capacity
   warm_pool                                      = var.warm_pool
 }
-
-resource "aws_autoscaling_group" "this" {
-  name              = var.name
-  min_size          = var.min_size
-  max_size          = var.max_size
-  desired_capacity  = var.desired_capacity
-  target_group_arns = var.target_group_arns
-}
