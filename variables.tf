@@ -15,13 +15,6 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
-
-variable "environment" {
-  description = "Environment where the resource(s) will be managed"
-  type        = string
-  default     = "dev"
-}
-
 ################################################################################
 # Autoscaling group
 ################################################################################
