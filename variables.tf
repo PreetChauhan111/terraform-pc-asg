@@ -1008,3 +1008,9 @@ variable "iam_role_tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "target_group_arns" {
+  description = "List of target group ARNs to attach to autoscaling group"
+  type        = list(string)
+  default     = []
+}
